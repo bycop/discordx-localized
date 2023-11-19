@@ -1,7 +1,10 @@
 import { dirname, importx } from "@discordx/importer";
 import type { Interaction, Message } from "discord.js";
-import { IntentsBitField } from "discord.js";
+import { ActivityType, IntentsBitField } from "discord.js";
 import { Client } from "discordx";
+
+import { config } from "dotenv";
+config();
 
 export const bot = new Client({
   // To use only guild command
@@ -10,10 +13,9 @@ export const bot = new Client({
   // Discord intents
   intents: [
     IntentsBitField.Flags.Guilds,
-    IntentsBitField.Flags.GuildMembers,
-    IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.GuildMessageReactions,
-    IntentsBitField.Flags.GuildVoiceStates,
+    // IntentsBitField.Flags.GuildMembers,
+    // IntentsBitField.Flags.GuildMessages,
+    // IntentsBitField.Flags.GuildMessageReactions
   ],
 
   // Debug logs are disabled in silent mode
@@ -41,6 +43,11 @@ bot.once("ready", async () => {
   //  );
 
   console.log("Bot started");
+  
+	bot?.user?.setActivity("Blackjack", {
+		type: ActivityType.Streaming,
+		url: "https://www.twitch.tv/bycop"
+	});
 });
 
 bot.on("interactionCreate", (interaction: Interaction) => {
