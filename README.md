@@ -61,28 +61,6 @@ npm run build
 npm run start
 ```
 
-# 🐋 Docker
-
-To start your application:
-
-```
-docker-compose up -d
-```
-
-To shut down your application:
-
-```
-docker-compose down
-```
-
-To view your application's logs:
-
-```
-docker-compose logs
-```
-
-For the full command list please view the [Docker Documentation](https://docs.docker.com/engine/reference/commandline/cli/).
-
 # 📜 Documentation
 
 - [discordx.js.org](https://discordx.js.org)
